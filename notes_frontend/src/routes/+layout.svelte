@@ -1,17 +1,21 @@
 <script lang="ts">
-    import '../app.css';
-    let { children } = $props();
+  import '../app.css';
+  import Header from '$lib/components/Header.svelte';
+  let { children } = $props();
 </script>
 
-<main>
-    {@render children()}
+<Header />
+<main class="container">
+  {@render children()}
 </main>
 
 <style>
-    main {
-        display: flex;
-        min-height: 100vh;
-        align-items: center;
-        justify-content: center;
-    }
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    min-height: calc(100vh - 56px);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
 </style>
